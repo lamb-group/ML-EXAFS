@@ -35,7 +35,7 @@ This repository provides a complete workflow for generating datasets for ML-EXAF
 
 ### 2.2 Installation
 ```bash
-git clone https://github.com/lamb-group/ML-EXAFS
+git clone https://github.com/lamb-group/ML-EXAFS.git
 cd ML-EXAFS
 
 # Create conda environment
