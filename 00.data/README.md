@@ -35,7 +35,7 @@ Example Usage:
   ```python
   python onne_main.py
 
-  python onne_main.py --nprocs 10 --workdir sampled_structures
+  python onne_main.py --nprocs 10 --workdir sampled_structures --scripts 6
   ```
 
 - **`preprocessing.py`**  
