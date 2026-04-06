@@ -1,7 +1,5 @@
 # Hyperparameter tuning
 
-This repository contains scripts and configuration files used to generate local atomic environments using the Objective Neural Network for EXAFS (ONNE) framework and to run FEFF simulations on generated structures.
-
 ---
 
 ## File Descriptions
