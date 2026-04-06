@@ -1,7 +1,5 @@
 # Model Training
 
-This folder contains the main
-
 ---
 
 ## File Descriptions
