@@ -11,9 +11,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--nprocs", type=int, default = 1)
 parser.add_argument("--workdir", type=str, default = "./generated_configs")
 parser.add_argument("--scripts", type=int, default = 4)
-args = parser.parse_args()
+args = parser.parse_known_args()
+
+
 # Define and create a working directory to store all macorstates
-working_dir = args[1]
+nprocs, working_dir, feff_scripts = vars(args).values()
+
 os.makedirs(working_dir,exist_ok=True)
 
 # Create a log file for debugging and program tracking
@@ -237,7 +240,7 @@ if __name__ == "__main__":
     tasks = [(i,packmol_input) for i, packmol_input in enumerate(packmol_inputs)]
 
     # Use multiprocessing to run through all packmol inputs and post-processing
-    with Pool(processes=args.nprocs) as pool:
+    with Pool(processes = nprocs) as pool:
         # Microstate assembly
         pool.map(generate_structure, tasks)
         # Go back to current directory (For redundancy)
@@ -290,5 +293,5 @@ if __name__ == "__main__":
 
     # Lastly we create SLURM scripts to run FEFF on HPC (Omit if needed)
     logging.info("Post Processing - Creating FEFF Slurm Scripts")
-    create_slurm_scripts(struct_folders, "run", cwd, num_blocks = args[2])
+    create_slurm_scripts(struct_folders, "run", cwd, num_blocks = feff_scripts)
     logging.info("Programm Finished")
