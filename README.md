@@ -16,11 +16,11 @@ This repository provides a complete workflow for generating datasets for ML-EXAF
 │   ├── Na.xyz
 │   ├── Zr.xyz
 │   ├── F.xyz
-│   └── generated_configs/
 ├── 01.hyperParameterTuning
 ├── 02.training
-├── 03.testing
-├── logs/
+├── 03.FineTuning
+├── analysis
+|── environment.yml
 └── README.md
 
 ```
